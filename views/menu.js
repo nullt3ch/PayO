@@ -96,11 +96,9 @@ export class MenuScreen extends React.Component {
 						},
 						{
               page: "WalletClubs",
-							icon: "notifications",
+							icon: "analytics",
 							iconText: "Membresias"
 						},
-						
-						
           ]}
         />
       </View>
