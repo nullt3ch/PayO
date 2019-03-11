@@ -111,9 +111,9 @@ export class LogInScreen extends React.Component {
 					this.emailInput.clear();
 					this.passwordInput.clear();
 					this.persistData();
-					alert(this.state.persistedSession);
+					// alert(this.state.persistedSession);
 					this.setState({userEmail: user})
-					navigate('Menu');
+					navigate('Verification');
 				}
 				else{
 					alert(responseJson);

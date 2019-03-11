@@ -3,12 +3,14 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   ScrollView,
   Animated,
   SafeAreaView,
   Dimensions,
   Button
 } from "react-native";
+import { TapGestureHandler } from "react-native-gesture-handler";
 
 const cardHeight = 200;
 const cardTitle = 45;
@@ -17,30 +19,23 @@ const cardPadding = 10;
 const { height } = Dimensions.get("window");
 const cards = [
   {
-    name: "Shot",
+    name: "Visa",
+    cardNumber: "4769",
+    cardOwner: "HUGO OSWALDO O PANTOJA",
+    expDate: "11/22",
     color: "#a9d0b6",
-    price: "30 CHF"
-  },
-  
+    price: "30 CHF",
+    src: "tarjeta1.png",
+  }
+  ,
   {
-    name: "Sandwich",
-    color: "#95c3e4",
-    price: "85 CHF"
-  },
-  {
-    name: "Combi",
+    name: "Mastercard",
+    cardNumber: "2386",
+    cardOwner: "HUGO ORTIZ PANTOJA",
+    expDate: "08/20",
     color: "#1c1c1c",
-    price: "145 CHF"
-  },
-  {
-    name: "Signature",
-    color: "#a390bc",
-    price: "92 CHF"
-  },
-  {
-    name: "Coffee",
-    color: "#fef2a0",
-    price: "47 CHF"
+    price: "85 CHF",
+    src: "tarjeta2.png",
   }
 ];
 export default class TestScreen extends React.Component  {
@@ -80,17 +75,21 @@ export default class TestScreen extends React.Component  {
                       key={card.name}
                       style={{ transform: [{ translateY }] }}
                     >
-                      <View
-                        style={[styles.card, { backgroundColor: card.color }]}>
-                    
-                        <Text style={styles.textBold}>Hola</Text>
                         
+                      <View
+                        style={[styles.card]}>
+                         <Image
+                          // style={styles.stretch}
+                          source={require('../assets/tarjeta1.png')}
+                        />
+                        {/* <Text style={styles.nameText}>{card.name}</Text>
+                        <Text style={styles.textBold}>{card.cardNumber}</Text>
+                        <Text style={styles.expText}>{card.expDate}</Text>
+                        <Text style={styles.ownerText}>{card.cardOwner}</Text> */}
                     </View>
                     </Animated.View>
-                    
                   );
                 })}
-                 
               </View>
               <Animated.ScrollView
                 scrollEventThrottle={16}
@@ -107,11 +106,8 @@ export default class TestScreen extends React.Component  {
                   { useNativeDriver: true }
                 )}
               />
-              
             </View>
-            
           </SafeAreaView>
-          
         );
       }
     }
@@ -133,11 +129,42 @@ export default class TestScreen extends React.Component  {
       },
       card: {
         height: cardHeight,
-        borderRadius: 10
+        borderRadius: 10,
+        borderWidth: 0,
+        borderColor: '#fff',
+        textShadowRadius: 2,
+        textShadowColor: 'rgba(0, 0, 0, .3)',
+        textShadowOffset: {width: 0, height: 1},
+      },
+      nameText: {
+        paddingTop: 15,
+        paddingLeft: 15,
+        flex: 1,
+        fontWeight: '700',
+        fontSize: 22,
+        color: '#fff',
       },
       textBold: {
+        paddingTop: 15,
+        paddingLeft: 270,
         flex: 1,
+        fontWeight: '700',
+        fontSize: 21,
+        color: '#fff',
+      },
+      expText: {
+        paddingTop: 0,
+        paddingLeft: 140,
+        flex: 1,
+        fontWeight: '700',
+        fontSize: 18,
+        color: '#fff',
+      },
+      ownerText: {
+        paddingLeft: 15,
+        paddingBottom: 15,
         fontWeight: '500',
+        fontSize: 18,
         color: '#fff',
       },
     });

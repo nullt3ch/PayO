@@ -4,6 +4,7 @@ import {
   Text,
   View,
   ScrollView,
+  Image,
   Animated,
   SafeAreaView,
   Dimensions,
@@ -17,41 +18,11 @@ const cardPadding = 10;
 const { height } = Dimensions.get("window");
 const cards = [
   {
-    name: "Shot",
-    color: "#a9d0b6",
+    name: "Club",
+    cardNumber: "0021",
+    color: "#1c1c1c",
     price: "30 CHF"
   }
-  // ,
-  // {
-  //   name: "Juice",
-  //   color: "#e9bbd1",
-  //   price: "64 CHF"
-  // },
-  // {
-  //   name: "Mighty Juice",
-  //   color: "#eba65c",
-  //   price: "80 CHF"
-  // },
-  // {
-  //   name: "Sandwich",
-  //   color: "#95c3e4",
-  //   price: "85 CHF"
-  // },
-  // {
-  //   name: "Combi",
-  //   color: "#1c1c1c",
-  //   price: "145 CHF"
-  // },
-  // {
-  //   name: "Signature",
-  //   color: "#a390bc",
-  //   price: "92 CHF"
-  // },
-  // {
-  //   name: "Coffee",
-  //   color: "#fef2a0",
-  //   price: "47 CHF"
-  // }
 ];
 export default class TestScreen extends React.Component  {
     state = {
@@ -90,8 +61,13 @@ export default class TestScreen extends React.Component  {
                       key={card.name}
                       style={{ transform: [{ translateY }] }}
                     >
-                    <View style={[styles.card, { backgroundColor: card.color }]}>
-                        <Text style={styles.textBold}>Hola</Text>
+                    <View style={[styles.card]}>
+                      <Image
+                        // style={styles.stretch}
+                        source={require('../assets/tarjeta2.png')}
+                      />
+                      {/* <Text style={styles.nameText}>{card.name}</Text>
+                      <Text style={styles.textBold}>{card.cardNumber}</Text> */}
                     </View>
                     </Animated.View>
                   );
@@ -135,11 +111,27 @@ export default class TestScreen extends React.Component  {
       },
       card: {
         height: cardHeight,
-        borderRadius: 10
+        borderRadius: 10,
+        borderWidth: 0,
+        borderColor: '#fff',
+        textShadowRadius: 2,
+        textShadowColor: 'rgba(0, 0, 0, .3)',
+        textShadowOffset: {width: 0, height: 1},
       },
-      textBold: {
+      nameText: {
+        paddingTop: 15,
+        paddingLeft: 15,
         flex: 1,
-        fontWeight: '500',
+        fontWeight: '700',
+        fontSize: 20,
         color: '#fff',
       },
+      textBold: {
+        paddingTop: 0,
+        paddingLeft: 270,
+        flex: 1,
+        fontWeight: '700',
+        fontSize: 21,
+        color: '#fff',
+      }
     });

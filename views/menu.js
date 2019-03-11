@@ -1,13 +1,11 @@
 import React from 'react';
 import { Text, StyleSheet,Button, View, Animated, SafeAreaView, Dimensions} from 'react-native';
 import Tabbar from 'react-native-tabbar-bottom'
-import Icon from 'react-native-vector-icons/FontAwesome';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Wallet from '../views/creditcard';
 import MembersWallet from '../views/memberscard';
 
 const pColor = '#F28705';
-const placeHolderColor = '#CCC';
 const nOptions = {
 		headerLeft:null,
 		title: 'Home',
@@ -17,20 +15,6 @@ const nOptions = {
 			borderColor: "#F28705",
 			backgroundColor: "#F28705",
 		},
-		// headerRight: (
-		// <Button
-		// 	icon={
-		// 		<Icon
-		// 			name="arrow-right"
-		// 			size={15}
-		// 			color="white"
-		// 		/>
-		// 	}
-		// 	onPress={() => alert('This is a button!')}
-		// 	title="Info"
-		// 	color="#fff"
-		// 	/>
-		// ),
 	headerTintColor: '#FFF',
 };
 export class MenuScreen extends React.Component {
@@ -46,22 +30,24 @@ export class MenuScreen extends React.Component {
 		this.setState({
 			qr: e.data
 		});
+		if(e.data == "PAY-3215030120"){
+			this.props.navigation.navigate('Payment',{code: e.data});
+		}
+		else{
+			alert("Error: código incorrecto");
+		}
   }
 	render() {
 		return (
       <View style={styles.container}>
-        {
-          // if you are using react-navigation just pass the navigation object in your components like this:
-          // {this.state.page === "HomeScreen" && <MyComp navigation={this.props.navigation}>Screen1</MyComp>}
-        }
         {this.state.page === "HomeScreen" && 
 					<QRCodeScanner
 						onRead={this.onSuccess.bind(this)}
-						bottomContent={
-							<Text style={styles.centerText}>
-								<Text style={styles.textBold}>{this.state.qr}</Text>
-							</Text>
-						}
+						// bottomContent={
+						// 	<Text style={styles.centerText}>
+						// 		<Text style={styles.textBold}>{this.state.qr}</Text>
+						// 	</Text>
+						// }
 					/>
 				}
 
