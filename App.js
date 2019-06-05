@@ -9,15 +9,15 @@ import { VerScreen } from './views/verification.js';
 import { PaymentScreen } from './views/payments.js';
 import { CheckOutScreen } from './views/checkout.js';
 import { PayListScreen } from './views/payments-list.js';
-// import { AddCCardScreen } from './views/addccard.js';
+import { AddCCardScreen } from './views/addccard.js';
 const logInNavigation = createStackNavigator({
 
+	Menu: { screen: MenuScreen },
 	LogIn: { screen: LogInScreen },
-	// AddCCard: { screen: AddCCardScreen },
+	AddCCard: { screen: AddCCardScreen },
 	Verification: { screen: VerScreen },
 	PayList : { screen: PayListScreen },
 	Payment: { screen: PaymentScreen },
-	Menu: { screen: MenuScreen },
 	Register: { screen: RegisterScreen },
 	CheckOut: { screen: CheckOutScreen },
 	Phone: { screen: PhoneScreen },

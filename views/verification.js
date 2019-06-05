@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Text, View, SafeAreaView, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
 
 

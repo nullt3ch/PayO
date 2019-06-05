@@ -43,11 +43,7 @@ export class MenuScreen extends React.Component {
         {this.state.page === "HomeScreen" && 
 					<QRCodeScanner
 						onRead={this.onSuccess.bind(this)}
-						// bottomContent={
-						// 	<Text style={styles.centerText}>
-						// 		<Text style={styles.textBold}>{this.state.qr}</Text>
-						// 	</Text>
-						// }
+					
 					/>
 				}
 

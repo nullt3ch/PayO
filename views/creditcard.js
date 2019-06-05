@@ -49,7 +49,7 @@ export default class TestScreen extends React.Component  {
             <SafeAreaView style={styles.root}>
             <Button
                 style={styles.button}
-                onPress={() => alert('This is a button!')}
+                onPress={() =>  this.props.navigation.navigate('AddCCard')}
                 title="Añadir Tarjetas"
                 color="#fff"
                 /> 
@@ -79,13 +79,9 @@ export default class TestScreen extends React.Component  {
                       <View
                         style={[styles.card]}>
                          <Image
-                          // style={styles.stretch}
                           source={require('../assets/tarjeta1.png')}
                         />
-                        {/* <Text style={styles.nameText}>{card.name}</Text>
-                        <Text style={styles.textBold}>{card.cardNumber}</Text>
-                        <Text style={styles.expText}>{card.expDate}</Text>
-                        <Text style={styles.ownerText}>{card.cardOwner}</Text> */}
+                      
                     </View>
                     </Animated.View>
                   );
