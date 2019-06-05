@@ -61,7 +61,8 @@ export default class TestScreen extends React.Component  {
                       key={card.name}
                       style={{ transform: [{ translateY }] }}
                     >
-                    <View style={[styles.card]}>
+                      		<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+                          <View style={[styles.card]}>
                       <Image
                         // style={styles.stretch}
                         source={require('../assets/tarjeta2.png')}
@@ -69,6 +70,8 @@ export default class TestScreen extends React.Component  {
                       {/* <Text style={styles.nameText}>{card.name}</Text>
                       <Text style={styles.textBold}>{card.cardNumber}</Text> */}
                     </View>
+                          </TouchableWithoutFeedback>
+                 
                     </Animated.View>
                   );
                 })}
