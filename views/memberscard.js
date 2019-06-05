@@ -62,7 +62,7 @@ export default class TestScreen extends React.Component  {
                       key={card.name}
                       style={{ transform: [{ translateY }] }}
                     >
-                      <TouchableOpacity style={[specificStyles.button]} onPress={(alert(card.name))}>
+                      <TouchableOpacity  onPress={(alert(card.name))}>
                       <Image
                         // style={styles.stretch}
                         source={require('../assets/tarjeta2.png')}
