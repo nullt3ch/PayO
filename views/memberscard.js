@@ -34,12 +34,12 @@ export default class TestScreen extends React.Component  {
         const { y } = this.state;
         return (
           <SafeAreaView style={styles.root}>
-           <Button
+           {/* <Button
                 style={styles.button}
                 onPress={() => alert('This is a button!')}
                 title="Añadir Membresias"
                 color="#fff"
-                /> 
+                />  */}
             <View style={styles.container}>
               <View style={StyleSheet.absoluteFill}>
                 {cards.map((card, i) => {
